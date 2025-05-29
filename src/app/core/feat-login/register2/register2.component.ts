@@ -23,7 +23,7 @@ export class Register2Component implements OnInit {
       {
         validators: [Validators.required, Validators.minLength(3), Validators.maxLength(100)],
         nonNullable: true,
-      },
+      }
     ),
     firstname: new FormControl('', {
       validators: [Validators.required, Validators.minLength(3), Validators.maxLength(100)],

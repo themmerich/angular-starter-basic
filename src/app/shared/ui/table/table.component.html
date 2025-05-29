@@ -17,8 +17,7 @@
   (onRowReorder)="onRowReorder($event)"
   metaKeySelection="false"
   [ngClass]="customClass"
-  [showGridlines]="true"
->
+  [showGridlines]="true">
   <!--ng-template #caption>
     <div class="flex">
       <p-iconfield iconPosition="left" class="ml-auto">
@@ -83,8 +82,7 @@
               type="button"
               icon="pi pi-pencil"
               class="p-button-sm p-button-text text-emerald-500"
-              (click)="onEdit(rowData)"
-            ></button>
+              (click)="onEdit(rowData)"></button>
           }
           @if (showDelete) {
             <button
@@ -92,8 +90,7 @@
               type="button"
               icon="pi pi-trash"
               class="p-button-sm p-button-text p-button-danger"
-              (click)="confirmDelete(rowData)"
-            ></button>
+              (click)="confirmDelete(rowData)"></button>
           }
         </td>
       }

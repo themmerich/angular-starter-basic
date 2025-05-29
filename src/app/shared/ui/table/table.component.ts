@@ -39,10 +39,10 @@ interface Column {
 export class TableComponent implements OnChanges {
   @Input() data!: any;
   @Input() columns!: Column[];
-  @Input() showEdit: boolean = false;
-  @Input() showDelete: boolean = false;
-  @Input() prefix: string = '';
-  @Input() customClass: string = '';
+  @Input() showEdit = false;
+  @Input() showDelete = false;
+  @Input() prefix = '';
+  @Input() customClass = '';
   @Input() reorder = false;
 
   @Output() rowReorder = new EventEmitter<any>();
@@ -60,7 +60,7 @@ export class TableComponent implements OnChanges {
   private searchPlaceholder = 'shared.table.searchPlaceholder';
   emptyMsg = 'shared.table.emptyMessage';
 
-  loading: boolean = true;
+  loading = true;
   multiSortMeta: SortMeta[] = [
     {
       field: 'name',
@@ -69,13 +69,13 @@ export class TableComponent implements OnChanges {
   ];
 
   constructor() {
-    this.translateService.get(this.currentPageReport).subscribe((translatedText) => {
+    this.translateService.get(this.currentPageReport).subscribe(translatedText => {
       this.currentPageReportTemplate = translatedText;
     });
 
     // Update translation when language changes
     this.translateService.onLangChange.subscribe(() => {
-      this.translateService.get(this.currentPageReport).subscribe((translatedText) => {
+      this.translateService.get(this.currentPageReport).subscribe(translatedText => {
         this.currentPageReportTemplate = translatedText;
       });
     });
@@ -97,7 +97,7 @@ export class TableComponent implements OnChanges {
   confirmDelete(event: any) {
     this.translateService
       .get([this.prefix + '.delete.title', this.prefix + '.delete.message', this.prefix + '.delete.ok', this.prefix + '.delete.cancel'])
-      .subscribe((translations) => {
+      .subscribe(translations => {
         this.confirmationService.confirm({
           message: translations[this.prefix + '.delete.message'],
           header: translations[this.prefix + '.delete.title'],

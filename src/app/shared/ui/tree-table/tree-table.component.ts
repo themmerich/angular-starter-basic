@@ -40,10 +40,10 @@ interface Column {
 export class TreeTableComponent implements OnChanges {
   @Input() data!: any;
   @Input() columns!: Column[];
-  @Input() showEdit: boolean = false;
-  @Input() showDelete: boolean = false;
-  @Input() prefix: string = '';
-  @Input() customClass: string = '';
+  @Input() showEdit = false;
+  @Input() showDelete = false;
+  @Input() prefix = '';
+  @Input() customClass = '';
 
   @Output() rowSelect = new EventEmitter<any>();
   @Output() delete = new EventEmitter<any>();
@@ -59,7 +59,7 @@ export class TreeTableComponent implements OnChanges {
   private searchPlaceholder = 'shared.table.searchPlaceholder';
   emptyMsg = 'shared.table.emptyMessage';
 
-  loading: boolean = true;
+  loading = true;
   multiSortMeta: SortMeta[] = [
     {
       field: 'name',
@@ -68,13 +68,13 @@ export class TreeTableComponent implements OnChanges {
   ];
 
   constructor() {
-    this.translateService.get(this.currentPageReport).subscribe((translatedText) => {
+    this.translateService.get(this.currentPageReport).subscribe(translatedText => {
       this.currentPageReportTemplate = translatedText;
     });
 
     // Update translation when language changes
     this.translateService.onLangChange.subscribe(() => {
-      this.translateService.get(this.currentPageReport).subscribe((translatedText) => {
+      this.translateService.get(this.currentPageReport).subscribe(translatedText => {
         this.currentPageReportTemplate = translatedText;
       });
     });
@@ -92,7 +92,7 @@ export class TreeTableComponent implements OnChanges {
   confirmDelete(event: any) {
     this.translateService
       .get([event.prefix + '.delete.title', event.prefix + '.delete.message', event.prefix + '.delete.ok', event.prefix + '.delete.cancel'])
-      .subscribe((translations) => {
+      .subscribe(translations => {
         this.confirmationService.confirm({
           message: translations[event.prefix + '.delete.message'],
           header: translations[event.prefix + '.delete.title'],

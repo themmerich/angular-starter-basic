@@ -26,9 +26,9 @@ export class AuthService {
         { refreshToken },
         {
           withCredentials: true, // Refresh token is sent automatically via HttpOnly cookie
-        },
+        }
       )
-      .pipe(map((response) => response.accessToken));
+      .pipe(map(response => response.accessToken));
   }
 
   logout() {

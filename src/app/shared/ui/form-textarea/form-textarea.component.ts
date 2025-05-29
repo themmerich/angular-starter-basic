@@ -15,13 +15,13 @@ export class FormTextareaComponent implements OnInit {
   @Input() id!: string;
   @Input() prefix!: string;
 
-  @Input() rows: number = 5;
-  @Input() cols: number = 30;
-  @Input() label: string = '';
-  @Input() placeholder: string = '';
-  @Input() disabled: boolean = false;
-  @Input() required: boolean = false;
-  @Input() readonly: boolean = false;
+  @Input() rows = 5;
+  @Input() cols = 30;
+  @Input() label = '';
+  @Input() placeholder = '';
+  @Input() disabled = false;
+  @Input() required = false;
+  @Input() readonly = false;
 
   private controlContainer = inject(ControlContainer, { optional: true });
 

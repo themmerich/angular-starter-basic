@@ -17,13 +17,13 @@ export class FormSelectComponent implements OnInit {
   @Input() options!: any[];
   @Input() optionLabel!: string;
 
-  @Input() type: string = 'text';
-  @Input() label: string = '';
-  @Input() placeholder: string = '';
-  @Input() autocomplete: string = 'off';
-  @Input() disabled: boolean = false;
-  @Input() required: boolean = false;
-  @Input() readonly: boolean = false;
+  @Input() type = 'text';
+  @Input() label = '';
+  @Input() placeholder = '';
+  @Input() autocomplete = 'off';
+  @Input() disabled = false;
+  @Input() required = false;
+  @Input() readonly = false;
 
   private controlContainer = inject(ControlContainer, { optional: true });
 

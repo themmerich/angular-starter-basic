@@ -9,9 +9,9 @@ import { Toolbar } from 'primeng/toolbar';
   styleUrl: './toolbar.component.scss',
 })
 export class ToolbarComponent {
-  @Input() showAdd: boolean = false;
-  @Input() showPrint: boolean = false;
-  @Input() showUpload: boolean = false;
+  @Input() showAdd = false;
+  @Input() showPrint = false;
+  @Input() showUpload = false;
   @Output() addItem = new EventEmitter<void>();
 
   onAdd() {

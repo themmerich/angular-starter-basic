@@ -14,7 +14,7 @@ export const GlobalStore = signalStore(
       name: '',
     } as Organization,
   }),
-  withMethods((state) => {
+  withMethods(state => {
     const globalService = inject(GlobalService);
     return {
       switchTheme(mode: string): void {
@@ -27,8 +27,8 @@ export const GlobalStore = signalStore(
         patchState(state, { color: color });
       },
       loadOrganization(id: number): void {
-        globalService.getById(id).subscribe((organization) => patchState(state, { organization: organization }));
+        globalService.getById(id).subscribe(organization => patchState(state, { organization: organization }));
       },
     };
-  }),
+  })
 );

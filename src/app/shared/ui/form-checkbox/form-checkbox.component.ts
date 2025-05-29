@@ -12,8 +12,8 @@ import { ControlContainer, FormControl, FormGroup } from '@angular/forms';
 export class FormCheckboxComponent implements OnInit {
   @Input() id!: string;
   @Input() prefix!: string;
-  @Input() value: boolean = false;
-  @Input() label: string = '';
+  @Input() value = false;
+  @Input() label = '';
 
   private controlContainer = inject(ControlContainer, { optional: true });
 

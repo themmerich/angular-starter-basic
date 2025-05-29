@@ -13,6 +13,6 @@ export class OptionNamesPipe implements PipeTransform {
     if (!options || options.length === 0) {
       return '';
     }
-    return options.map((option) => option.name).join(', ');
+    return options.map(option => option.name).join(', ');
   }
 }

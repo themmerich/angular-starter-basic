@@ -13,10 +13,10 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class LoginInputComponent implements OnInit {
   @Input() fieldName: string | undefined;
 
-  @Input() id: string = 'id';
-  @Input() type: string = 'text';
-  @Input() placeholder: string = '';
-  @Input() autocomplete: string = 'off';
+  @Input() id = 'id';
+  @Input() type = 'text';
+  @Input() placeholder = '';
+  @Input() autocomplete = 'off';
 
   @Input() control!: FormControl;
 

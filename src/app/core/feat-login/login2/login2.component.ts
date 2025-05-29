@@ -36,7 +36,7 @@ export class Login2Component {
           username: this.loginForm.value.email,
           password: this.loginForm.value.password,
         })
-        .subscribe((response) => {
+        .subscribe(response => {
           this.authService.saveToken(response.accessToken);
           this.router.navigate(['/']);
         });

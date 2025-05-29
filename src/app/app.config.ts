@@ -39,6 +39,6 @@ export const appConfig: ApplicationConfig = {
         deps: [HttpClient],
       },
     }),
-    ConfirmationService
+    ConfirmationService,
   ],
 };

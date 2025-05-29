@@ -14,12 +14,12 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     });
   }
   return next(req).pipe(
-    catchError((error) => {
+    catchError(error => {
       if (error.status === 401) {
         return refreshTokenAndRetry(req, next);
       }
       return throwError(() => error);
-    }),
+    })
   );
 };
 
@@ -41,10 +41,10 @@ const refreshTokenAndRetry = (req: HttpRequest<any>, next: HttpHandlerFn) => {
       });
       return next(clonedRequest);
     }),
-    catchError((error) => {
+    catchError(error => {
       console.error('Refresh token failed, logging out...');
       inject(AuthService).logout();
       return throwError(() => error);
-    }),
+    })
   );
 };
