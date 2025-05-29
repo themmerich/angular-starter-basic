@@ -4,6 +4,7 @@ const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
 const unusedImports = require('eslint-plugin-unused-imports');
 const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
+const sheriff = require('@softarc/eslint-plugin-sheriff');
 
 module.exports = tseslint.config(
   {
@@ -16,7 +17,7 @@ module.exports = tseslint.config(
       ...tseslint.configs.recommended,
       ...tseslint.configs.stylistic,
       ...angular.configs.tsRecommended,
-      eslintPluginPrettierRecommended,
+      eslintPluginPrettierRecommended
     ],
     processor: angular.processInlineTemplates,
     rules: {
@@ -56,5 +57,9 @@ module.exports = tseslint.config(
       ...angular.configs.templateAccessibility,
     ],
     rules: {},
-  }
+  },
+  {
+    files: ['**/*.ts'],
+    extends: [sheriff.configs.all],
+  },
 );

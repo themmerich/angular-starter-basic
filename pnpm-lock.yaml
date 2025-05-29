@@ -48,6 +48,12 @@ importers:
       '@angular/compiler-cli':
         specifier: ^19.2.0
         version: 19.2.14(@angular/compiler@19.2.14)(typescript@5.7.3)
+      '@softarc/eslint-plugin-sheriff':
+        specifier: ^0.18.0
+        version: 0.18.0(@softarc/sheriff-core@0.18.0(typescript@5.7.3))(@typescript-eslint/utils@8.33.0(eslint@9.27.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.27.0(jiti@1.21.7))
+      '@softarc/sheriff-core':
+        specifier: ^0.18.0
+        version: 0.18.0(typescript@5.7.3)
       '@types/jasmine':
         specifier: ~5.1.0
         version: 5.1.8
@@ -1676,6 +1682,19 @@ packages:
 
   '@socket.io/component-emitter@3.1.2':
     resolution: {integrity: sha512-9BCxFwvbGg/RsZK9tjXd8s4UcwR0MWeFQ1XEKIQVVvAGJyINdrqKMcTRyLoK8Rse1GjzLV9cwjWV1olXRWEXVA==}
+
+  '@softarc/eslint-plugin-sheriff@0.18.0':
+    resolution: {integrity: sha512-9oQaN15rtpyTUJvh1nKh0YTY5oYcnGrKJf79NNoXUmoeDQIRpzMtWBm85Mcxvbqs80918Q/zd70yUOeWXc3kAA==}
+    peerDependencies:
+      '@softarc/sheriff-core': 0.18.0
+      '@typescript-eslint/utils': ^5.48.2 || ^6.0.0 || ^7.0.0 || ^8.0.0-alpha.20
+      eslint: ^8.0.0 || ^9.0.0
+
+  '@softarc/sheriff-core@0.18.0':
+    resolution: {integrity: sha512-HnwAn1sKEHY+QJUHN4mIpcn+RDfDQwmbEmWt/zobEjZqiYsXsY586MNl1/rjc8tJZ/aWtr5lyatxyC5TUs4UBg==}
+    hasBin: true
+    peerDependencies:
+      typescript: '>=4.8'
 
   '@tufjs/canonical-json@2.0.0':
     resolution: {integrity: sha512-yVtV8zsdo8qFHe+/3kw81dSLyF7D576A5cCFCi4X7B39tWT7SekaEFUnvnWJHz+9qO7qJTah1JbrDjWKqFtdWA==}
@@ -6359,6 +6378,16 @@ snapshots:
   '@sindresorhus/merge-streams@2.3.0': {}
 
   '@socket.io/component-emitter@3.1.2': {}
+
+  '@softarc/eslint-plugin-sheriff@0.18.0(@softarc/sheriff-core@0.18.0(typescript@5.7.3))(@typescript-eslint/utils@8.33.0(eslint@9.27.0(jiti@1.21.7))(typescript@5.7.3))(eslint@9.27.0(jiti@1.21.7))':
+    dependencies:
+      '@softarc/sheriff-core': 0.18.0(typescript@5.7.3)
+      '@typescript-eslint/utils': 8.33.0(eslint@9.27.0(jiti@1.21.7))(typescript@5.7.3)
+      eslint: 9.27.0(jiti@1.21.7)
+
+  '@softarc/sheriff-core@0.18.0(typescript@5.7.3)':
+    dependencies:
+      typescript: 5.7.3
 
   '@tufjs/canonical-json@2.0.0': {}
 
