@@ -8,7 +8,7 @@ import { Organization } from '../model/organization';
   providedIn: 'root',
 })
 export class GlobalService {
-  public apiUrl = environment.apiUrl;
+  private apiUrl = environment.apiUrl;
   private http = inject(HttpClient);
 
   getById(id: number): Observable<Organization> {

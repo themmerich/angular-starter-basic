@@ -1,21 +1,21 @@
 <p-treeTable
   #tt1
   dataKey="id"
-  [value]="data"
+  metaKeySelection="false"
+  selectionMode="single"
   [columns]="columns"
-  [resizableColumns]="true"
-  [tableStyle]="{ 'min-width': '50rem' }"
+  [currentPageReportTemplate]="currentPageReportTemplate"
+  [ngClass]="customClass"
   [paginator]="true"
+  [resizableColumns]="true"
+  [rowTrackBy]="rowTrackBy"
   [rows]="10"
   [rowsPerPageOptions]="[10, 20, 50]"
   [showCurrentPageReport]="true"
-  [currentPageReportTemplate]="currentPageReportTemplate"
-  selectionMode="single"
-  [(selection)]="selectedData"
-  metaKeySelection="false"
-  [ngClass]="customClass"
-  [rowTrackBy]="rowTrackBy"
-  [showGridlines]="true">
+  [showGridlines]="true"
+  [tableStyle]="{ 'min-width': '50rem' }"
+  [value]="data"
+  [(selection)]="selectedData">
   <!--ng-template #caption>
     <div class="flex">
       <p-iconfield iconPosition="left" class="ml-auto">
@@ -41,34 +41,34 @@
     </tr>
   </ng-template>
 
-  <ng-template #body let-rowNode let-rowData="rowData" let-columns="columns">
+  <ng-template #body let-columns="columns" let-rowData="rowData" let-rowNode>
     <tr [ttRow]="rowNode">
       @for (col of columns; track col.field; let index = $index) {
         @if (col.type === 'date') {
           <td>
             @if (index === 0) {
-              <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+              <p-treeTableToggler [rowNode]="rowNode" />
             }
             {{ rowData[col.field] | date: 'dd.MM.yyyy' }}
           </td>
         } @else if (col.type === 'option') {
           <td>
             @if (index === 0) {
-              <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+              <p-treeTableToggler [rowNode]="rowNode" />
             }
             {{ rowData[col.field] | optionName }}
           </td>
         } @else if (col.type === 'options') {
           <td>
             @if (index === 0) {
-              <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+              <p-treeTableToggler [rowNode]="rowNode" />
             }
             {{ rowData[col.field] | optionNames }}
           </td>
         } @else if (col.type === 'icon') {
           <td class="text-center">
             @if (index === 0) {
-              <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+              <p-treeTableToggler [rowNode]="rowNode" />
             }
             <i [class]="getIcon(rowData[col.field])"></i>
           </td>
@@ -77,13 +77,13 @@
             <td></td>
           } @else {
             <td class="text-center">
-              <p-rating [(ngModel)]="rowData.rating" readonly></p-rating>
+              <p-rating readonly [(ngModel)]="rowData.rating" />
             </td>
           }
         } @else {
           <td [class]="getChildRowStyle(rowData)">
             @if (index === 0) {
-              <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+              <p-treeTableToggler [rowNode]="rowNode" />
             }
             {{ rowData[col.field] }}
           </td>
@@ -93,20 +93,20 @@
         <td class="text-center">
           @if (showEdit && rowData['showEdit'] === true) {
             <button
+              class="p-button-sm p-button-text text-emerald-500"
+              icon="pi pi-pencil"
               pButton
               type="button"
-              icon="pi pi-pencil"
-              class="p-button-sm p-button-text text-emerald-500"
               (click)="onEdit(rowData)"></button>
           } @else {
-            <button pButton disabled type="button" icon="pi pi-pencil" class="p-button-sm p-button-text text-transparent"></button>
+            <button class="p-button-sm p-button-text text-transparent" disabled icon="pi pi-pencil" pButton type="button"></button>
           }
           @if (showDelete) {
             <button
+              class="p-button-sm p-button-text p-button-danger"
+              icon="pi pi-trash"
               pButton
               type="button"
-              icon="pi pi-trash"
-              class="p-button-sm p-button-text p-button-danger"
               (click)="confirmDelete(rowData)"></button>
           }
         </td>

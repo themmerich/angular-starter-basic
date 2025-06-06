@@ -1,4 +1,4 @@
-<p-floatlabel [formGroup]="formGroup" variant="on" class="w-full">
-  <input pInputText id="street" #addressInput class="w-full" formControlName="street" placeholder="" />
-  <label for="street" class="font-semibold">{{ 'shared.address.street' | translate }}</label>
+<p-floatlabel class="w-full" variant="on" [formGroup]="formGroup">
+  <input #addressInput class="w-full" formControlName="street" id="street" pInputText placeholder="" />
+  <label class="font-semibold" for="street">{{ 'shared.address.street' | translate }}</label>
 </p-floatlabel>

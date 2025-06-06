@@ -11,7 +11,7 @@ import { TreeTableModule } from 'primeng/treetable';
 import { Rating } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 
-interface Column {
+type Column = {
   field: string;
   header: string;
   type: string;

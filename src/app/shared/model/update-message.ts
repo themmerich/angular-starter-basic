@@ -1,4 +1,4 @@
-export interface UpdateMessage {
+export type UpdateMessage = {
   severity: string;
   message: string;
 }

@@ -42,8 +42,8 @@ export class FormMultiselectComponent implements OnInit {
   }
 
   getErrorMessage() {
-    if (this.formControl.errors?.['required']) return this.prefix + '.error.' + this.id + '.required';
-    if (this.formControl.errors?.['email']) return this.prefix + '.error.' + this.id + '.invalid';
+    if (this.formControl.errors?.['required']) {return this.prefix + '.error.' + this.id + '.required';}
+    if (this.formControl.errors?.['email']) {return this.prefix + '.error.' + this.id + '.invalid';}
     return '';
   }
 }

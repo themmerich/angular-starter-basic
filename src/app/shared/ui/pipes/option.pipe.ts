@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-interface Option {
+type Option = {
   id: number;
   name: string;
 }

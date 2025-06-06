@@ -10,7 +10,7 @@ import { OptionNamesPipe } from '@ui/pipes/options.pipe';
 import { Checkbox } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
 
-interface Column {
+type Column = {
   field: string;
   header: string;
   type: string;

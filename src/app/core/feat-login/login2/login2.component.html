@@ -4,11 +4,11 @@
     <div>
       <svg
         class="fill-surface-900 dark:fill-surface-0 transition-all"
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
+        fill="none"
         height="33"
         viewBox="0 0 32 33"
-        fill="none">
+        width="32"
+        xmlns="http://www.w3.org/2000/svg">
         <path d="M16 0.5C7.16344 0.5 0 7.66344 0 16.5C8.83656 16.5 16 9.33656 16 0.5Z" />
         <path d="M16 32.5C24.8366 32.5 32 25.3366 32 16.5C23.1634 16.5 16 23.6634 16 32.5Z" />
         <path d="M16 0.5C24.8366 0.5 32 7.66344 32 16.5C23.1634 16.5 16 9.33656 16 0.5Z" />
@@ -20,20 +20,20 @@
     <!-- Login with Google, Facebook or Apple -->
     <div class="flex items-center gap-4 w-full">
       <button
-        pButton
-        type="button"
+        class="!flex-1 !py-1 !text-xl !leading-none text-surface-900 dark:!text-surface-0 p-button-outlined p-button-secondary"
         icon="pi pi-google"
-        class="!flex-1 !py-1 !text-xl !leading-none text-surface-900 dark:!text-surface-0 p-button-outlined p-button-secondary"></button>
-      <button
         pButton
-        type="button"
+        type="button"></button>
+      <button
+        class="!flex-1 !py-1 !text-xl !leading-none text-surface-900 dark:!text-surface-0 p-button-outlined p-button-secondary"
         icon="pi pi-facebook"
-        class="!flex-1 !py-1 !text-xl !leading-none text-surface-900 dark:!text-surface-0 p-button-outlined p-button-secondary"></button>
-      <button
         pButton
-        type="button"
+        type="button"></button>
+      <button
+        class="!flex-1 !py-1 !text-xl !leading-none text-surface-900 dark:!text-surface-0 p-button-outlined p-button-secondary"
         icon="pi pi-apple"
-        class="!flex-1 !py-1 !text-xl !leading-none text-surface-900 dark:!text-surface-0 p-button-outlined p-button-secondary"></button>
+        pButton
+        type="button"></button>
     </div>
 
     <div class="flex items-center gap-6 w-full">
@@ -42,49 +42,49 @@
       <div class="h-px flex-1 bg-surface-200 dark:bg-surface-800"></div>
     </div>
 
-    <form [formGroup]="loginForm" (ngSubmit)="login()" class="flex flex-col w-full gap-6">
+    <form class="flex flex-col w-full gap-6" [formGroup]="loginForm" (ngSubmit)="login()">
       <!-- email and password -->
       <div class="flex flex-col gap-4 w-full">
         <div class="flex flex-col gap-2">
           <label for="email">{{ 'core.login.email' | translate }}</label>
           <input
-            pInputText
-            id="email"
+            class="w-full dark:!bg-surface-900"
             formControlName="email"
-            placeholder="{{ 'core.login.email' | translate }}"
-            class="w-full dark:!bg-surface-900" />
+            id="email"
+            pInputText
+            placeholder="{{ 'core.login.email' | translate }}" />
         </div>
         <div class="flex flex-col gap-2">
           <label for="password">{{ 'core.login.password' | translate }}</label>
           <input
-            pInputText
-            id="password"
-            type="password"
+            class="w-full dark:!bg-surface-900"
             formControlName="password"
+            id="password"
+            pInputText
             placeholder="{{ 'core.login.password' | translate }}"
-            class="w-full dark:!bg-surface-900" />
+            type="password" />
         </div>
       </div>
 
       <!-- remember me and forgot password -->
       <div class="flex items-center justify-between w-full gap-6">
         <div class="flex items-center">
-          <p-checkbox id="remember_me" name="remember_me" binary="true" formControlName="remember" />
-          <label for="remember_me" class="ml-2 text-surface-700 dark:text-surface-300">{{ 'core.login.rememberMe' | translate }}</label>
+          <p-checkbox binary="true" formControlName="remember" id="remember_me" name="remember_me" />
+          <label class="ml-2 text-surface-700 dark:text-surface-300" for="remember_me">{{ 'core.login.rememberMe' | translate }}</label>
         </div>
-        <a href="#" class="font-medium text-primary hover:text-primary-emphasis transition-all">{{
+        <a class="font-medium text-primary hover:text-primary-emphasis transition-all" href="#">{{
           'core.login.forgotPassword' | translate
         }}</a>
       </div>
 
       <!-- Submit Button -->
-      <button pButton type="submit" class="w-full">{{ 'core.login.button' | translate }}</button>
+      <button class="w-full" pButton type="submit">{{ 'core.login.button' | translate }}</button>
     </form>
 
     <!-- Register -->
     <div class="mt-2 text-surface-700 dark:text-surface-300 font-medium">
       {{ 'core.login.noAccount' | translate }}
-      <a routerLink="/register" class="text-primary hover:text-primary-emphasis transition-all">{{ 'core.login.createOne' | translate }}</a>
+      <a class="text-primary hover:text-primary-emphasis transition-all" routerLink="/register">{{ 'core.login.createOne' | translate }}</a>
     </div>
   </div>
 </div>
