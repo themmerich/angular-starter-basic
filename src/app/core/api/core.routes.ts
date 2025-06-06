@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { FaqComponent } from '../feat-faq/faq/faq.component';
-import { NotFoundComponent } from '@ui/not-found/not-found.component';
 import { AboutComponent } from '../feat-about/about/about.component';
+import { NotFoundComponent } from '@ui/not-found/not-found.component';
 
 export const coreRoutes: Routes = [
   {
