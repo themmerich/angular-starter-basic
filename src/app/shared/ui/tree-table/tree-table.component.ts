@@ -17,7 +17,7 @@ type Column = {
   type: string;
   sort?: boolean;
   headerStyle: string;
-}
+};
 
 @Component({
   selector: 'sf-tree-table',

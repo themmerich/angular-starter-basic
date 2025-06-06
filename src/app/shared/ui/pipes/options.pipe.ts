@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 type Option = {
   id: number;
   name: string;
-}
+};
 
 @Pipe({
   name: 'optionNames',

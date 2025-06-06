@@ -31,7 +31,7 @@ export const routes: Routes = [
       {
         path: 'core',
         //canActivate: [authGuard],
-        loadChildren: () => import('./core/api/core.routes').then((m) => m.coreRoutes),
+        loadChildren: () => import('./core/api/core.routes').then(m => m.coreRoutes),
       },
     ],
   },
