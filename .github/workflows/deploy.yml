@@ -28,4 +28,7 @@ jobs:
         run: pnpm run build:githubpages
 
       - name: Deploy to GitHub Pages
-        run: pnpm run deploy:githubpages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist/angular-starter-3/browser
